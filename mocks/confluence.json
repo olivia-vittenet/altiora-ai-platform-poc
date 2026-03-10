@@ -1,0 +1,143 @@
+{
+    "results": [
+        {
+            "id": "1049582",
+            "type": "page",
+            "title": "Architecture: Energy Optimization Platform v2",
+            "space": {
+                "key": "ENG",
+                "name": "Engineering"
+            },
+            "metadata": {
+                "labels": {
+                    "results": [
+                        {
+                            "name": "architecture"
+                        },
+                        {
+                            "name": "region:us"
+                        },
+                        {
+                            "name": "lang:en"
+                        },
+                        {
+                            "name": "project:industrial-opt"
+                        }
+                    ]
+                }
+            },
+            "body": {
+                "storage": {
+                    "value": "<h1>System Overview</h1><p>The Energy Optimization Platform v2 is designed to handle millions of IoT events per minute from our solar and wind installations in the US. It uses Kafka for ingestion, Apache Flink for real-time processing, and stores aggregated metrics in TimescaleDB.</p><h2>Key Components</h2><ul><li><strong>Ingestion Gateway:</strong> Normalizes payloads from different turbine models.</li><li><strong>Prediction Engine:</strong> Uses ML to predict generation based on weather forecasts.</li></ul>",
+                    "representation": "storage"
+                }
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "architecture_board",
+                    "b2b_engineers",
+                    "us_region_admin",
+                    "engineering_department"
+                ],
+                "visibility": "restricted",
+                "classification": "Internal",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Standard technical documentation",
+                    "security_owner": "Head of Engineering"
+                }
+            }
+        },
+        {
+            "id": "1049590",
+            "type": "page",
+            "title": "Grille des Salaires 2026 (Confidentiel RH)",
+            "space": {
+                "key": "HR",
+                "name": "Ressources Humaines"
+            },
+            "metadata": {
+                "labels": {
+                    "results": [
+                        {
+                            "name": "salary"
+                        },
+                        {
+                            "name": "region:france"
+                        },
+                        {
+                            "name": "lang:fr"
+                        },
+                        {
+                            "name": "policy"
+                        }
+                    ]
+                }
+            },
+            "body": {
+                "storage": {
+                    "value": "<h1>Grilles de rémunération 2026 - France</h1><p>Junior Developer: 40k-48k</p><p>Senior Developer: 55k-75k</p><p>Engineering Manager: 80k-110k</p>",
+                    "representation": "storage"
+                }
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "hr_confidential_france",
+                    "executive_board"
+                ],
+                "visibility": "highly_restricted",
+                "classification": "Strictly Confidential",
+                "ai_ingestion": {
+                    "is_eligible": false,
+                    "reason": "Sensitive corporate compensation data. Excluded as per Information Security Office.",
+                    "security_owner": "Information Security Office and HR Director"
+                }
+            }
+        },
+        {
+            "id": "1049591",
+            "type": "page",
+            "title": "Politique de Télétravail 2026",
+            "space": {
+                "key": "HR",
+                "name": "Ressources Humaines"
+            },
+            "metadata": {
+                "labels": {
+                    "results": [
+                        {
+                            "name": "remote"
+                        },
+                        {
+                            "name": "region:france"
+                        },
+                        {
+                            "name": "lang:fr"
+                        },
+                        {
+                            "name": "policy"
+                        }
+                    ]
+                }
+            },
+            "body": {
+                "storage": {
+                    "value": "<h1>Charte de Télétravail</h1><p>Tous les employés français sont autorisés à effectuer jusqu'à 3 jours de télétravail par semaine après accord de leur manager direct. Une allocation mensuelle de 30 euros est versée pour l'équipement.</p>",
+                    "representation": "storage"
+                }
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "everybody@altiora.internal"
+                ],
+                "visibility": "public",
+                "classification": "Public",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "General company policy, meant to be queried by employees.",
+                    "security_owner": "HR Director"
+                }
+            }
+        }
+    ]
+}

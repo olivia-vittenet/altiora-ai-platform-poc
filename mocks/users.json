@@ -1,0 +1,35 @@
+{
+    "users": [
+        {
+            "id": "U-1001",
+            "username": "s.dev",
+            "displayName": "Sophie Developpeur",
+            "department": "Engineering",
+            "role": "Senior Mobile Developer",
+            "email": "sophie.dev@altiora.fr",
+            "region": "France",
+            "aad_groups": [
+                "everybody@altiora.internal",
+                "mobile_apps_team",
+                "france_region_all",
+                "engineering_department",
+                "code_reviewers_eu"
+            ]
+        },
+        {
+            "id": "U-1002",
+            "username": "m.rh",
+            "displayName": "Marc Ressources-Humaines",
+            "department": "Human Resources",
+            "role": "HR Business Partner",
+            "email": "marc.rh@altiora.fr",
+            "region": "France",
+            "aad_groups": [
+                "everybody@altiora.internal",
+                "hr_department_all",
+                "france_region_all",
+                "hr_confidential_france"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,169 @@
+{
+    "issues": [
+        {
+            "key": "MOB-1204",
+            "fields": {
+                "summary": "Graphe de production solaire bloqué sur iOS",
+                "description": "Les clients FR signalent que le graphique de l'application iOS reste bloqué sur les données d'hier. L'API semble renvoyer des résultats en cache.",
+                "issuetype": {
+                    "name": "Bug"
+                },
+                "status": {
+                    "name": "In Progress"
+                },
+                "project": {
+                    "key": "MOB",
+                    "name": "Mobile Applications"
+                },
+                "labels": [
+                    "region:france",
+                    "lang:fr",
+                    "platform:ios",
+                    "b2c"
+                ],
+                "security": {
+                    "name": "Internal"
+                },
+                "customfield_10010": "Europe/Paris",
+                "created": "2026-03-08T10:15:30.000Z",
+                "updated": "2026-03-10T09:00:22.000Z"
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "b2c_developers",
+                    "mobile_apps_team",
+                    "france_region_all"
+                ],
+                "visibility": "restricted",
+                "classification": "Internal",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Standard operational issue",
+                    "security_owner": "Mobile Lead"
+                }
+            }
+        },
+        {
+            "key": "HR-205",
+            "fields": {
+                "summary": "Préparation contrat pour nouveau développeur Senior FR",
+                "description": "Editer le contrat de travail pour S. Dupont. Salaire validé à 75k€ + prime. Début prévu le 01/04.",
+                "issuetype": {
+                    "name": "Task"
+                },
+                "status": {
+                    "name": "To Do"
+                },
+                "project": {
+                    "key": "HRFR",
+                    "name": "HR France Operations"
+                },
+                "labels": [
+                    "region:france",
+                    "lang:fr",
+                    "onboarding",
+                    "contract"
+                ],
+                "security": {
+                    "name": "Strictly Confidential"
+                },
+                "customfield_10010": "Europe/Paris",
+                "created": "2026-03-09T14:22:10.000Z"
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "hr_department_all",
+                    "hr_confidential_france"
+                ],
+                "visibility": "highly_restricted",
+                "classification": "Strictly Confidential",
+                "ai_ingestion": {
+                    "is_eligible": false,
+                    "reason": "Contains PII and salary information. Never index or transmit to AI.",
+                    "security_owner": "Information Security Office and HR Director"
+                }
+            }
+        },
+        {
+            "key": "HR-101",
+            "fields": {
+                "summary": "Validation du plan de formation 2026",
+                "description": "Validation du budget alloué aux formations techniques de l'équipe engineering (Kafka, Azure, React).",
+                "issuetype": {
+                    "name": "Epic"
+                },
+                "status": {
+                    "name": "In Progress"
+                },
+                "project": {
+                    "key": "HRFR",
+                    "name": "HR France Operations"
+                },
+                "labels": [
+                    "region:france",
+                    "lang:fr",
+                    "training",
+                    "budget"
+                ],
+                "security": {
+                    "name": "Confidential"
+                },
+                "customfield_10010": "Europe/Paris",
+                "created": "2026-02-01T09:30:00.000Z"
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "hr_department_all",
+                    "engineering_management"
+                ],
+                "visibility": "restricted",
+                "classification": "Confidential",
+                "ai_ingestion": {
+                    "is_eligible": false,
+                    "reason": "Contains financial budgets. Escalation required to CISO for ingestion review.",
+                    "security_owner": "Information Security Office"
+                }
+            }
+        },
+        {
+            "key": "B2C-405",
+            "fields": {
+                "summary": "Ajout d'une section conseils d'éco-consommation",
+                "description": "Pour booster notre initiative d'éco-consommation en France, les utilisateurs doivent voir des astuces quotidiennes pour optimiser leur usage électrique selon leur compteur Linky.",
+                "issuetype": {
+                    "name": "Story"
+                },
+                "status": {
+                    "name": "Done"
+                },
+                "project": {
+                    "key": "B2C",
+                    "name": "B2C Solar Solutions"
+                },
+                "labels": [
+                    "region:france",
+                    "lang:fr",
+                    "feature:eco-tips",
+                    "b2c"
+                ],
+                "security": {
+                    "name": "Public - Company Wide"
+                },
+                "customfield_10010": "Europe/Paris",
+                "created": "2026-02-15T09:30:00.000Z"
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "everybody@altiora.internal"
+                ],
+                "visibility": "public",
+                "classification": "Public",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Company wide accessible data",
+                    "security_owner": "Product Owner B2C"
+                }
+            }
+        }
+    ]
+}

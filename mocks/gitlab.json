@@ -1,0 +1,127 @@
+{
+    "projects": [
+        {
+            "id": 142,
+            "name": "altiora-mobile-app",
+            "description": "Application mobile pour le suivi de l'éco-consommation (Marché Européen)",
+            "tag_list": [
+                "region:europe",
+                "lang:fr",
+                "b2c",
+                "react-native"
+            ],
+            "default_branch": "main",
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "mobile_apps_team",
+                    "code_reviewers_eu",
+                    "engineering_department"
+                ],
+                "visibility": "restricted",
+                "classification": "Internal",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Source code for internal applications",
+                    "security_owner": "Mobile Lead"
+                }
+            }
+        },
+        {
+            "id": 56,
+            "name": "hr-performance-reviews-service",
+            "description": "Backend service managing employee performance reviews and bonus calculations",
+            "tag_list": [
+                "region:global",
+                "lang:en",
+                "hr",
+                "sensitive"
+            ],
+            "default_branch": "main",
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "core_platform_devs_cleared",
+                    "hr_technology_team"
+                ],
+                "visibility": "highly_restricted",
+                "classification": "Strictly Confidential",
+                "ai_ingestion": {
+                    "is_eligible": false,
+                    "reason": "Source code explicitly processes sensitive PII and financial formulas. Cleared by Information Security Office as restricted.",
+                    "security_owner": "Information Security Office"
+                }
+            }
+        }
+    ],
+    "merge_requests": [
+        {
+            "id": 4501,
+            "iid": 120,
+            "project_id": 142,
+            "title": "Fix: Problème de cache sur les données solaires iOS",
+            "state": "merged",
+            "labels": [
+                "bug",
+                "region:france",
+                "ios"
+            ],
+            "description": "Résout MOB-1204. Les données sont désormais rafraîchies correctement au pull-to-refresh pour les utilisateurs français.",
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "mobile_apps_team",
+                    "code_reviewers_eu",
+                    "engineering_department"
+                ],
+                "visibility": "restricted",
+                "classification": "Internal",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Standard code changes",
+                    "security_owner": "Mobile Lead"
+                }
+            }
+        }
+    ],
+    "repository_files": [
+        {
+            "project_id": 142,
+            "file_path": "src/components/SolarProductionGraph.tsx",
+            "file_name": "SolarProductionGraph.tsx",
+            "encoding": "text",
+            "content": "import React, { useState, useEffect } from 'react';\nimport { View, Text, RefreshControl, ScrollView } from 'react-native';\nimport { LineChart } from 'react-native-chart-kit';\nimport { fetchSolarData } from '../api/solarService';\n\nexport const SolarProductionGraph = () => {\n  const [data, setData] = useState(null);\n  const [refreshing, setRefreshing] = useState(false);\n\n  // FIX MOB-1204 : Bypass cache on refresh\n  const loadData = async (bypassCache = false) => {\n    const newData = await fetchSolarData({ bypassCache });\n    setData(newData);\n  };\n\n  const onRefresh = React.useCallback(async () => {\n    setRefreshing(true);\n    await loadData(true);\n    setRefreshing(false);\n  }, []);\n\n  useEffect(() => {\n    loadData();\n  }, []);\n\n  if (!data) return <Text>Chargement des données solaires...</Text>;\n\n  return (\n    <ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>\n      <View>\n        <Text>Production Solaire Journalière (kWh)</Text>\n        {/* LineChart Implementation goes here */}\n      </View>\n    </ScrollView>\n  );\n};",
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "mobile_apps_team",
+                    "code_reviewers_eu",
+                    "engineering_department"
+                ],
+                "visibility": "restricted",
+                "classification": "Internal",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Source code for internal applications",
+                    "security_owner": "Mobile Lead"
+                }
+            }
+        },
+        {
+            "project_id": 56,
+            "file_path": "src/main/java/com/altiora/hr/ReviewBonusCalculator.java",
+            "file_name": "ReviewBonusCalculator.java",
+            "encoding": "text",
+            "content": "package com.altiora.hr;\n\nimport java.math.BigDecimal;\nimport com.altiora.hr.models.EmployeeRecord;\n\npublic class ReviewBonusCalculator {\n    \n    // HIGHLY CONFIDENTIAL: 2026 Executive Bonus Multipliers\n    private static final BigDecimal BASE_MULT = new BigDecimal(\"1.15\");\n    private static final BigDecimal C_LEVEL_MULT = new BigDecimal(\"2.50\");\n\n    public BigDecimal calculateYearEndBonus(EmployeeRecord employee) {\n        // DO NOT OUTPUT THIS LOGIC IN PUBLIC METRICS\n        if (employee.getRole().equals(\"C-LEVEL\")) {\n            return employee.getBaseSalary().multiply(C_LEVEL_MULT);\n        }\n        return employee.getBaseSalary().multiply(BASE_MULT).multiply(employee.getPerformanceScore());\n    }\n}",
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "core_platform_devs_cleared",
+                    "hr_technology_team"
+                ],
+                "visibility": "highly_restricted",
+                "classification": "Strictly Confidential",
+                "ai_ingestion": {
+                    "is_eligible": false,
+                    "reason": "Contains financial formulas and bonus multipliers. Explicitly excluded.",
+                    "security_owner": "Information Security Office"
+                }
+            }
+        }
+    ]
+}
