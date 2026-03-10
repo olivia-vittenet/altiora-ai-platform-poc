@@ -45,3 +45,19 @@ Pour valider le multilinguisme et les filtres géographiques, les documents port
 *   `region:us` / `lang:en` (pour le B2B Industriel).
 
 Cela permet de filtrer l'ingestion ou le contexte RAG selon la région définie sur le profil utilisateur dans `users.json`.
+
+## Pipeline d'Ingestion & Validation (RAG)
+
+Pour ce POC, deux scripts Python ont été développés afin de simuler la préparation et la consommation de ces données par l'IA :
+
+1.  **`scripts/ingest.py` (Ingestion Sémantique) :**
+    *   **Chunking (Découpage) :** Utilise `RecursiveCharacterTextSplitter` avec une taille de bloc (`chunk_size`) fixée à **800 caractères** et un chevauchement (`chunk_overlap`) de **100 caractères** pour préserver le contexte entre deux blocs.
+    *   **Embedding (Vectorisation) :** Utilise le modèle open-source `paraphrase-multilingual-MiniLM-L12-v2` via `SentenceTransformers`, choisi pour son excellente gestion du Français et de l'Anglais.
+    *   **Indexation Vectorielle :** Stocke les vecteurs localement dans un format FAISS (`faiss_index/`), complété par une simulation d'upload distant vers un bucket AWS S3 (via Boto3).
+
+2.  **`scripts/test_query.py` (Script de Test Utilisateur) :**
+    Ce script de validation charge l'index local FAISS et simule un cas d'usage réel de ChatBot d'Entreprise.
+    Il simule explicitement deux points de vue distincts en chargeant les profils de `users.json` :
+    *   **Sophie (Développeuse)**
+    *   **Marc (RH)**
+    Pour chaque question posée, le script exécute une recherche sémantique classique (Similarity Search), puis **filtre algorithmiquement les documents retournés** en s'assurant que les Groupes Azure AD des documents (`doc.metadata['allowed_groups']`) correspondent bien à ceux du profil simulé. Cela garantit que Sophie ne pourra jamais ingérer ou lire des grilles salariales RH, mais qu'elle trouvera parfaitement le code source d'un ticket Jira.

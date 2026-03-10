@@ -4,7 +4,7 @@
             "key": "MOB-1204",
             "fields": {
                 "summary": "Graphe de production solaire bloqué sur iOS",
-                "description": "Les clients FR signalent que le graphique de l'application iOS reste bloqué sur les données d'hier. L'API semble renvoyer des résultats en cache.",
+                "description": "Les clients FR signalent que le graphique de l'application iOS reste bloqué sur les données d'hier.\nSteps to reproduce: Aller sur le dashboard, tirer pour rafraîchir. \nL'API semble renvoyer des résultats en cache (HTTP 304).",
                 "issuetype": {
                     "name": "Bug"
                 },
@@ -32,7 +32,8 @@
                 "allowed_aad_groups": [
                     "b2c_developers",
                     "mobile_apps_team",
-                    "france_region_all"
+                    "france_region_all",
+                    "engineering_department"
                 ],
                 "visibility": "restricted",
                 "classification": "Internal",
@@ -47,7 +48,7 @@
             "key": "HR-205",
             "fields": {
                 "summary": "Préparation contrat pour nouveau développeur Senior FR",
-                "description": "Editer le contrat de travail pour S. Dupont. Salaire validé à 75k€ + prime. Début prévu le 01/04.",
+                "description": "Editer le contrat de travail pour S. Dupont. Salaire validé à 75k€ + prime de 5k€ à la signature. Début prévu le 01/04. Statut Cadre. Envoyer promesse d'embauche via DocuSign.",
                 "issuetype": {
                     "name": "Task"
                 },
@@ -85,10 +86,52 @@
             }
         },
         {
+            "key": "DEV-990",
+            "fields": {
+                "summary": "Incident de production: Fuite mémoire sur le service de facturation",
+                "description": "Le pod Kubernetes `billing-service-eu` redémarre en boucle avec des erreurs OOMKilled. \nAnalyse initiale : Il semble que la nouvelle librairie de génération de PDF ne libère pas les buffers après la création des factures B2B. A investiguer d'urgence.",
+                "issuetype": {
+                    "name": "Incident"
+                },
+                "status": {
+                    "name": "Open"
+                },
+                "project": {
+                    "key": "PLAT",
+                    "name": "Core Platform"
+                },
+                "labels": [
+                    "region:europe",
+                    "lang:fr",
+                    "backend",
+                    "billing",
+                    "urgent"
+                ],
+                "security": {
+                    "name": "Internal"
+                },
+                "created": "2026-03-10T08:15:00.000Z"
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "engineering_department",
+                    "platform_sre",
+                    "billing_team"
+                ],
+                "visibility": "restricted",
+                "classification": "Internal",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Technical incident details",
+                    "security_owner": "Head of Engineering"
+                }
+            }
+        },
+        {
             "key": "HR-101",
             "fields": {
                 "summary": "Validation du plan de formation 2026",
-                "description": "Validation du budget alloué aux formations techniques de l'équipe engineering (Kafka, Azure, React).",
+                "description": "Validation du budget alloué aux formations techniques de l'équipe engineering (Kafka, Azure, React). Enveloppe globale demandée : 150 000€.",
                 "issuetype": {
                     "name": "Epic"
                 },
@@ -108,7 +151,6 @@
                 "security": {
                     "name": "Confidential"
                 },
-                "customfield_10010": "Europe/Paris",
                 "created": "2026-02-01T09:30:00.000Z"
             },
             "__mock_acl": {
@@ -119,49 +161,50 @@
                 "visibility": "restricted",
                 "classification": "Confidential",
                 "ai_ingestion": {
-                    "is_eligible": false,
-                    "reason": "Contains financial budgets. Escalation required to CISO for ingestion review.",
-                    "security_owner": "Information Security Office"
+                    "is_eligible": true,
+                    "reason": "Aggregated budgets without PII are eligible for ingest to aid management queries.",
+                    "security_owner": "HR Director"
                 }
             }
         },
         {
-            "key": "B2C-405",
+            "key": "HR-310",
             "fields": {
-                "summary": "Ajout d'une section conseils d'éco-consommation",
-                "description": "Pour booster notre initiative d'éco-consommation en France, les utilisateurs doivent voir des astuces quotidiennes pour optimiser leur usage électrique selon leur compteur Linky.",
+                "summary": "Problème d'accès à la mutuelle (Alan) pour les nouveaux arrivants",
+                "description": "Plusieurs collaborateurs arrivés en Février signalent qu'ils n'ont pas reçu leur lien d'activation pour la mutuelle d'entreprise Alan. \nVérifier l'intégration API entre Workday et Alan.",
                 "issuetype": {
-                    "name": "Story"
+                    "name": "Bug"
                 },
                 "status": {
-                    "name": "Done"
+                    "name": "Open"
                 },
                 "project": {
-                    "key": "B2C",
-                    "name": "B2C Solar Solutions"
+                    "key": "HRIT",
+                    "name": "HR IT Systems"
                 },
                 "labels": [
                     "region:france",
                     "lang:fr",
-                    "feature:eco-tips",
-                    "b2c"
+                    "benefits",
+                    "integration"
                 ],
                 "security": {
-                    "name": "Public - Company Wide"
+                    "name": "Internal"
                 },
-                "customfield_10010": "Europe/Paris",
-                "created": "2026-02-15T09:30:00.000Z"
+                "created": "2026-03-05T11:00:00.000Z"
             },
             "__mock_acl": {
                 "allowed_aad_groups": [
+                    "hr_department_all",
+                    "hr_technology_team",
                     "everybody@altiora.internal"
                 ],
                 "visibility": "public",
-                "classification": "Public",
+                "classification": "Internal",
                 "ai_ingestion": {
                     "is_eligible": true,
-                    "reason": "Company wide accessible data",
-                    "security_owner": "Product Owner B2C"
+                    "reason": "Common HR IT issue, useful for HR triage chatbot",
+                    "security_owner": "HR IT Lead"
                 }
             }
         }

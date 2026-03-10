@@ -1,0 +1,27 @@
+# Environments
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# FAISS Vector Index
+faiss_index/
+*.faiss
+*.pkl
+
+# Logs and output
+*.log
+logs_ingestion.txt
+
+# AWS / Cloud
+.aws/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

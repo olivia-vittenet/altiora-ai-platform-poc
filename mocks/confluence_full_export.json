@@ -1,0 +1,110 @@
+{
+    "results": [
+        {
+            "id": "1049582",
+            "title": "Architecture: Core Energy Processing Pipeline",
+            "space": {
+                "key": "ENG",
+                "name": "Engineering"
+            },
+            "body": {
+                "storage": {
+                    "value": "<h1>System Overview</h1><p>The Energy Optimization Platform v2 is designed to handle millions of IoT events per minute from our solar and wind installations in the US. It uses Kafka for ingestion, Apache Flink for real-time processing, and stores aggregated metrics in TimescaleDB.</p><h2>Key Components</h2><ul><li><strong>IoT Gateway:</strong> Node.js edge servers</li><li><strong>Message Broker:</strong> Confluent Kafka cluster (topics: `raw-solar-telemetry`, `raw-wind-telemetry`)</li><li><strong>Stream Processing:</strong> Flink jobs running on Kubernetes</li></ul>"
+                }
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "architecture_board",
+                    "b2b_engineers",
+                    "us_region_admin",
+                    "engineering_department"
+                ],
+                "visibility": "restricted",
+                "classification": "Internal",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Technical documentation for developers",
+                    "security_owner": "Director of Engineering"
+                }
+            }
+        },
+        {
+            "id": "205948",
+            "title": "Grille Salariale Engineering France - 2026",
+            "space": {
+                "key": "HR",
+                "name": "Human Resources France"
+            },
+            "body": {
+                "storage": {
+                    "value": "<h1>Grilles de Rémunération - Pôle Tech (Ref. 2026)</h1><p>Ce document est à usage exclusif des HRBP lors des recrutements ou revues annuelles (NAO).</p><h2>Bandes Salariales (Fixe + Part variable)</h2><ul><li><strong>Junior (0-2 ans):</strong> 42K€ - 48K€ + 3K€</li><li><strong>Confirmé (3-5 ans):</strong> 50K€ - 65K€ + 5K€</li><li><strong>Senior (6-10 ans):</strong> 70K€ - 85K€ + 10% bonus</li><li><strong>Staff/VP (>10 ans):</strong> >95K€ + RSU Equity</li></ul>"
+                }
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "hr_department_all",
+                    "hr_management_eu"
+                ],
+                "visibility": "highly_restricted",
+                "classification": "Confidential",
+                "ai_ingestion": {
+                    "is_eligible": false,
+                    "reason": "Extremely sensitive compensation data. Strict non-ingestion policy.",
+                    "security_owner": "HR Director France"
+                }
+            }
+        },
+        {
+            "id": "200021",
+            "title": "Politique de Télétravail Flex-Office",
+            "space": {
+                "key": "HR",
+                "name": "Human Resources Global"
+            },
+            "body": {
+                "storage": {
+                    "value": "<h1>Télétravail & Remote Work</h1><p>Altiora encourage la flexibilité. La politique globale autorise jusqu'à <strong>3 jours de télétravail par semaine</strong> pour les postes éligibles (majoritairement Tech et Marketing).</p><h2>Indemnités</h2><p>Une allocation mensuelle de 45€ (ou 50$) est versée pour couvrir les frais d'équipement et d'énergie au domicile.</p>"
+                }
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "everybody@altiora.internal"
+                ],
+                "visibility": "public",
+                "classification": "Public",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Public company policy, useful for generic AI Q&A",
+                    "security_owner": "HR Director Global"
+                }
+            }
+        },
+        {
+            "id": "301550",
+            "title": "Guide de diagnostic: Erreurs Inverter SolarEdge",
+            "space": {
+                "key": "OPS",
+                "name": "Operations Support"
+            },
+            "body": {
+                "storage": {
+                    "value": "<h1>Code d'erreur 89 : Surtension Réseau (Grid Overvoltage)</h1><p>Si un onduleur SolarEdge remonte l'erreur 89, cela indique une tension du réseau ENEDIS supérieure à 253V. </p><h2>Procédure d'intervention</h2><ol><li>Vérifier la tension via l'API Monitoring SolarEdge.</li><li>Si le problème persiste plus de 24h, créer un ticket Enedis via le portail B2B.</li><li>Informer le client B2C que l'onduleur se met en sécurité pour protéger la maison.</li></ol>"
+                }
+            },
+            "__mock_acl": {
+                "allowed_aad_groups": [
+                    "engineering_department",
+                    "b2c_support_team",
+                    "france_region_all"
+                ],
+                "visibility": "restricted",
+                "classification": "Internal",
+                "ai_ingestion": {
+                    "is_eligible": true,
+                    "reason": "Support and operational procedures",
+                    "security_owner": "VP of Operations"
+                }
+            }
+        }
+    ]
+}
