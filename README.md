@@ -10,8 +10,8 @@ Le dossier `/mocks` contient les fichiers suivants :
 *   `users.json` : Simule deux profils de l'Active Directory.
     *   **Sophie** (`s.dev`) : Développeuse Senior dans l'équipe Mobile B2C. A accès aux documents techniques non-confidentiels.
     *   **Marc** (`m.rh`) : Responsable des Ressources Humaines FR. A accès aux documents RH fortement sécurisés.
-*   `jira.json` : Tickets de bugs (B2C sur iOS), epics d'architecture (éoliennes B2B) et des tickets RH strictement confidentiels (préparation de contrats).
-*   `confluence.json` : Pages documentaires d'ingénierie globale, OKRs de l'entreprise, chartes de télétravail publiques ou grilles de salaires strictement confidentielles.
+*   `jira_full_export.json` : Tickets de bugs (B2C sur iOS), epics d'architecture (éoliennes B2B) et des tickets RH strictement confidentiels (préparation de contrats).
+*   `confluence_full_export.json` : Pages documentaires d'ingénierie globale, OKRs de l'entreprise, chartes de télétravail publiques ou grilles de salaires strictement confidentielles.
 *   `gitlab.json` : Dépôts de code, Merge Requests et Commits. Contient un projet d'app mobile B2C européen et un backend d'optimisation énergétique B2B aux US. Mêle du code source technique et un backend de gestion des "performance reviews".
 
 ## Simulation du Rôle Azure AD (ACL)
