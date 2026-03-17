@@ -1,0 +1,34 @@
+{
+    "document_id": "TECH-CONF-2026-99",
+    "title": "Spécifications Critiques : Moteur d'Optimisation Énergétique (Core)",
+    "metadata": {
+        "project": "Project Helios",
+        "confidentiality_level": "Restricted to Engineering",
+        "author": "Architecture Board",
+        "last_update": "2026-03-01"
+    },
+    "technical_specs": {
+        "infrastructure": "Le moteur tourne sur des instances AWS Graviton3 pour optimiser le ratio performance/watt.",
+        "algorithm": "Nous utilisons une forêt d'arbres décisionnels (Random Forest) pour prédire la consommation réseau à T+15min.",
+        "secrets": "Les clés de chiffrement des données IoT sont stockées dans AWS KMS avec une rotation automatique tous les 30 jours.",
+        "database_logic": "Pour éviter les verrous (deadlocks), nous utilisons un partitionnement horizontal (sharding) basé sur l'ID de l'installation solaire."
+    },
+    "deployment_security": {
+        "firewall": "Toutes les connexions entrantes sont filtrées par un WAF (Web Application Firewall) configuré en mode 'Deny All' par défaut.",
+        "incident_response": "En cas de détection d'anomalie sur le flux Kafka, le circuit-breaker 'Hystrix' coupe automatiquement l'ingestion pour protéger la base de données."
+    },
+    "__mock_acl": {
+        "allowed_aad_groups": [
+            "engineering_department",
+            "mobile_apps_team",
+            "platform_sre"
+        ],
+        "visibility": "restricted",
+        "classification": "Confidential - Trade Secret",
+        "ai_ingestion": {
+            "is_eligible": true,
+            "reason": "Documentation technique vitale pour l'équipe engineering. Contient du savoir-faire propriétaire.",
+            "security_owner": "CTO Altiora"
+        }
+    }
+}
