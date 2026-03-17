@@ -1,0 +1,26 @@
+{
+    "policy_name": "Charte Altiora - Travail Hybride 2026",
+    "version": "2.1",
+    "last_updated": "2026-01-15",
+    "content": {
+        "eligibility": "Tous les collaborateurs en CDI et CDD (hors période d'essai) dont les missions sont réalisables à distance.",
+        "remote_days": "La politique autorise jusqu'à 3 jours de télétravail par semaine. Une présence physique est obligatoire les mardis pour les réunions de synchronisation d'équipe.",
+        "allowance": "Une indemnité forfaitaire de 45€ nets par mois est versée pour couvrir les frais d'électricité, de chauffage et d'abonnement internet liés au domicile.",
+        "equipment": "L'entreprise fournit un kit Home Office comprenant : un écran 24 pouces, un clavier, une souris ergonomique et un casque réducteur de bruit.",
+        "insurance": "Le collaborateur doit fournir une attestation d'assurance multirisque habitation couvrant le télétravail."
+    },
+    "__mock_acl": {
+        "allowed_aad_groups": [
+            "everybody@altiora.internal",
+            "france_region_all",
+            "usa_region_all"
+        ],
+        "visibility": "public",
+        "classification": "Internal",
+        "ai_ingestion": {
+            "is_eligible": true,
+            "reason": "Politique globale d'entreprise. Utile pour les questions récurrentes des employés.",
+            "security_owner": "Directeur des Ressources Humaines"
+        }
+    }
+}
