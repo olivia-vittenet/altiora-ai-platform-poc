@@ -1,0 +1,98 @@
+{
+    "document_id": "GUIDE-TECH-2026-001",
+    "title": "Manuel d'Onboarding Engineering - Altiora Group",
+    "metadata": {
+        "owner": "Engineering Excellence Team",
+        "last_revision": "2026-02-10",
+        "status": "Final",
+        "tags": ["setup", "environment", "kubernetes", "aws", "security"]
+    },
+    "sections": [
+        {
+            "id": "intro",
+            "title": "Bienvenue chez Altiora",
+            "content": "Ce guide a pour but de vous rendre opérationnel en moins de 4 heures. Vous allez configurer votre poste local, vos accès cloud et vos droits sur la forge logicielle GitLab."
+        },
+        {
+            "id": "workstation",
+            "title": "1. Configuration du Poste de Travail",
+            "steps": [
+                "Utilisation obligatoire de macOS ou Linux (Ubuntu 22.04+).",
+                "Installation de Homebrew pour la gestion des paquets.",
+                "Commandes : brew install git docker colima kubectl helm awscli.",
+                "Configuration de Git : git config --global user.email 'votre.email@altiora.fr'."
+            ]
+        },
+        {
+            "id": "aws_access",
+            "title": "2. Accès AWS & Cloud",
+            "content": "Nous utilisons l'authentification SSO. Ne créez jamais de clés IAM statiques.",
+            "procedure": {
+                "login_url": "https://altiora-sso.awsapps.com/start",
+                "region": "eu-west-3 (Paris)",
+                "profiles": ["development", "staging", "sandbox"]
+            },
+            "command": "aws configure sso --profile development"
+        },
+        {
+            "id": "container_runtime",
+            "title": "3. Environnement de Conteneurisation",
+            "content": "Altiora utilise Docker avec Colima pour la légèreté sur Mac.",
+            "runtime_settings": {
+                "cpu": 4,
+                "memory": "8GB",
+                "disk": "60GB"
+            },
+            "environment_variables": {
+                "DOCKER_HOST": "unix://${HOME}/.colima/default/docker.sock",
+                "KUBECONFIG": "${HOME}/.kube/config"
+            }
+        },
+        {
+            "id": "kubernetes_dev",
+            "title": "4. Cluster de Développement (EKS)",
+            "content": "Chaque développeur dispose d'un namespace dédié : `dev-{prenom}-{nom}`.",
+            "secrets_management": "Nous utilisons Vault pour la gestion des secrets. N'utilisez jamais de fichiers .env committés.",
+            "vpn_requirement": "La connexion au VPN GlobalProtect est obligatoire pour accéder aux APIs privées du cluster."
+        },
+        {
+            "id": "ci_cd_pipeline",
+            "title": "5. Standards de Code & CI/CD",
+            "conventions": [
+                "Formatage : Prettier ou Black (Python).",
+                "Tests : Minimum 80% de couverture de code exigé.",
+                "Review : Au moins deux approbations avant merge sur 'main'.",
+                "Pipeline : Chaque push déclenche un scan de sécurité SonarQube et Prisma Cloud."
+            ]
+        },
+        {
+            "id": "troubleshooting",
+            "title": "6. Résolution des Problèmes Communs",
+            "issues": [
+                {
+                    "error": "403 Forbidden on S3",
+                    "fix": "Vérifiez que votre session SSO n'est pas expirée avec 'aws sso login'."
+                },
+                {
+                    "error": "Docker OOM",
+                    "fix": "Augmentez la mémoire allouée à Colima (minimum 8GB recommandé)."
+                }
+            ]
+        }
+    ],
+    "__mock_acl": {
+        "allowed_aad_groups": [
+            "engineering_department",
+            "mobile_apps_team",
+            "platform_sre",
+            "everybody@altiora.internal"
+        ],
+        "visibility": "internal",
+        "classification": "Internal",
+        "ai_ingestion": {
+            "is_eligible": true,
+            "reason": "Guide technique essentiel pour l'assistance aux nouveaux collaborateurs.",
+            "security_owner": "VP of Engineering"
+        }
+    }
+}
