@@ -1,0 +1,13 @@
+{
+    "file_name": "Rapport_Financier_Confidentiel.json",
+    "content": "CHIFFRES CLÉS 2026 : Chiffre d'affaires US : 150M$. Trésorerie nette : 45M$. Liste des salaires des directeurs : [DONNÉES MASQUÉES]. Ce document contient des secrets commerciaux protégés par le secret des affaires.",
+    "__mock_acl": {
+        "allowed_aad_groups": ["hr_management_eu", "finance_admin"],
+        "visibility": "highly_restricted",
+        "classification": "Secret-Défense",
+        "ai_ingestion": { 
+            "is_eligible": false, 
+            "reason": "Document classifié. Interdiction formelle d'indexation ou de transmission à un LLM." 
+        }
+    }
+}
