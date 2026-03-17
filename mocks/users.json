@@ -32,4 +32,32 @@
             ]
         }
     ]
+    "id": "U-1003",
+            "username": "l.us",
+            "displayName": "Lucas United-States",
+            "department": "Engineering",
+            "role": "Lead Cloud Architect",
+            "email": "lucas.us@altiora.com",
+            "region": "USA",
+            "aad_groups": [
+                "everybody@altiora.internal",
+                "engineering_department",
+                "usa_region_all",
+                "cfius_cleared_tech"
+            ]
+        },
+        {
+            "id": "U-9999",
+            "username": "guest.test",
+            "displayName": "Visiteur Temporaire",
+            "department": "Unknown",
+            "role": "External Guest",
+            "email": "guest@external.com",
+            "region": "World",
+            "aad_groups": [
+                "everybody@altiora.internal"
+            ]
+        }
+    ]
+}
 }
