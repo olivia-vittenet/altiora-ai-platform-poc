@@ -1,0 +1,10 @@
+{
+    "file_name": "LM_Alice_Martin_Fullstack.json",
+    "candidate": "Alice Martin",
+    "content": "Objet : Candidature Lead Développeuse. Actuellement en poste dans une scale-up de la GreenTech, je souhaite mettre mes 6 ans d'expérience au profit d'Altiora. Spécialisée en React Native et Node.js, j'ai l'habitude d'encadrer des équipes de 4 à 6 développeurs tout en restant active sur le code. Votre approche du Flex-Office et votre vision produit orientée B2C correspondent exactement à mon prochain défi professionnel.",
+    "__mock_acl": {
+        "allowed_aad_groups": ["hr_department_all", "hr_confidential_france"],
+        "visibility": "restricted",
+        "ai_ingestion": { "is_eligible": true, "reason": "Dossier candidat" }
+    }
+}
