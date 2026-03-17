@@ -1,0 +1,10 @@
+{
+    "file_name": "LM_Kevin_Lefebvre_Backend.json",
+    "candidate": "Kevin Lefebvre",
+    "content": "Passionné par l'informatique durable, je vous propose mes services en tant que développeur Backend. Maîtrisant Java et Rust, je me suis spécialisé durant mon master sur l'optimisation de la consommation énergétique des algorithmes de tri. Intégrer Altiora est pour moi l'opportunité de concilier ma passion pour le code performant et mes valeurs écologiques. Je suis prêt à m'investir sur vos problématiques de réduction d'empreinte carbone logicielle.",
+    "__mock_acl": {
+        "allowed_aad_groups": ["hr_department_all", "hr_confidential_france"],
+        "visibility": "restricted",
+        "ai_ingestion": { "is_eligible": true, "reason": "Dossier candidat" }
+    }
+}
