@@ -1,0 +1,10 @@
+{
+    "file_name": "LM_Sarah_Benali_DevOps.json",
+    "candidate": "Sarah Benali",
+    "content": "Forte d'une expérience de 5 ans en environnement Cloud AWS et Azure, je souhaite rejoindre vos équipes Platform en tant qu'Ingénieure DevOps. Experte Terraform et CI/CD, j'ai automatisé des infrastructures complexes permettant des déploiements sans interruption de service. La souveraineté des données et les problématiques liées au CFIUS sont des sujets que j'ai déjà traités lors de mes précédentes missions dans le secteur de l'énergie.",
+    "__mock_acl": {
+        "allowed_aad_groups": ["hr_department_all", "hr_confidential_france"],
+        "visibility": "restricted",
+        "ai_ingestion": { "is_eligible": true, "reason": "Dossier candidat" }
+    }
+}
