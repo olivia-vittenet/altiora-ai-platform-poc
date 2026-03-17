@@ -1,0 +1,10 @@
+{
+    "file_name": "LM_Jean_Dupont_Expert_Java.json",
+    "candidate": "Jean Dupont",
+    "content": "Madame, Monsieur, Expert en écosystème Java depuis plus de 12 ans, j'ai suivi avec un grand intérêt l'évolution d'Altiora dans le secteur de l'optimisation énergétique. Ayant piloté la refonte des systèmes critiques chez TotalEnergies, je maîtrise parfaitement les flux Kafka et les déploiements sur Kubernetes. Mon expertise en architectures distribuées me permettrait de renforcer immédiatement votre projet Helios. Je suis particulièrement attiré par votre stack technique AWS et votre culture de l'excellence en ingénierie.",
+    "__mock_acl": {
+        "allowed_aad_groups": ["hr_department_all", "hr_confidential_france"],
+        "visibility": "restricted",
+        "ai_ingestion": { "is_eligible": true, "reason": "Dossier candidat" }
+    }
+}
