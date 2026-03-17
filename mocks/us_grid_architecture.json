@@ -1,0 +1,14 @@
+{
+    "file_name": "US_Grid_Master_Architecture.json",
+    "project": "Project Liberty-Eye",
+    "location": "San Francisco Data Center",
+    "content": "L'architecture du réseau Liberty-Eye aux USA repose sur une isolation physique des serveurs de contrôle. Le pipeline de données utilise Amazon Kinesis pour traiter 50 000 événements par seconde provenant des fermes éoliennes du Texas. Contrairement au modèle européen, nous utilisons ici un algorithme de prédiction propriétaire développé spécifiquement pour les variations de tension du réseau américain.",
+    "__mock_acl": {
+        "allowed_aad_groups": ["usa_region_all", "cfius_cleared_tech", "engineering_department"],
+        "visibility": "highly_restricted",
+        "ai_ingestion": { 
+            "is_eligible": true, 
+            "reason": "Documentation technique critique - Restriction géographique USA" 
+        }
+    }
+}
