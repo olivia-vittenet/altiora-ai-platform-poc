@@ -1,0 +1,10 @@
+{
+    "file_name": "Accès_Wifi_Visiteurs.json",
+    "subject": "Connexion Internet Invités",
+    "content": "Le réseau Wi-Fi 'Altiora-Guest' est ouvert à tous les visiteurs. Le code d'accès est renouvelé chaque lundi et affiché à l'accueil. Note : Ce réseau ne donne aucun accès aux ressources internes (S3, GitLab, Jira).",
+    "__mock_acl": {
+        "allowed_aad_groups": ["everybody@altiora.internal"],
+        "visibility": "public",
+        "ai_ingestion": { "is_eligible": true, "reason": "Information publique" }
+    }
+}
